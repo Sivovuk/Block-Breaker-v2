@@ -24,7 +24,7 @@ public class GameOver : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ball") && !_turnOffDetection)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
         }
     }
 }

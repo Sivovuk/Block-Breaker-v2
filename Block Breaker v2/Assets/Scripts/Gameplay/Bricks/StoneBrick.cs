@@ -4,7 +4,7 @@ namespace Gameplay.Bricks
 {
     public class StoneBrick : BasicBrick
     {
-        public override void TakeDamage()
+        public override void TakeDamage(bool isFireball)
         {
             return;
         }

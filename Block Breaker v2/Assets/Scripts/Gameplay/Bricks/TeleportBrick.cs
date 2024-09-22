@@ -14,7 +14,7 @@ namespace Gameplay.Bricks
             _mainCamera = Camera.main;
         }
 
-        public override void TakeDamage()
+        public override void TakeDamage(bool isFireball)
         {
             if (!_isTeleported)
             {
@@ -23,7 +23,7 @@ namespace Gameplay.Bricks
                 return;
             }
             
-            base.TakeDamage();
+            base.TakeDamage(isFireball);
         }
 
         private void Teleport()

@@ -15,8 +15,11 @@ namespace Gameplay.Bricks
             _sprite = GetComponent<SpriteRenderer>();
         }
 
-        public virtual void TakeDamage()
+        public virtual void TakeDamage(bool isFireball)
         {
+            if (isFireball)
+                Destroy(gameObject);
+                
             _brickLife--;
 
             if (_brickLife < 1)
