@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3415008948789081778, guid: 30b9e48730825f045908abfce15ca012, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2413806693520163455, guid: ab0cd19d610892848a6179a82935c332, type: 3}
+    - target: {fileID: 5108435005051801354, guid: 30b9e48730825f045908abfce15ca012, type: 3}
+      propertyPath: m_Name
+      value: Icon
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -78,5 +86,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fallSpeed: 10
-  _duration: 10
-  _type: 2
+  _duration: 3
+  _rewardValue: 10
+  _type: 3

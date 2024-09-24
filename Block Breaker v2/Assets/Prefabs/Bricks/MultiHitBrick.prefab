@@ -86,3 +86,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _brickLife: 3
+  _brickBreakReward: 10
+  <Type>k__BackingField: 2

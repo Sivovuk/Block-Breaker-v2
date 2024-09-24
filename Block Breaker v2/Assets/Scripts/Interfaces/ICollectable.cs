@@ -2,6 +2,6 @@
 {
     public interface ICollectable
     {
-        public void Collect(CollectableType type, float duration);
+        public void Collect(CollectableType type, float duration, int rewardValue);
     }
 }

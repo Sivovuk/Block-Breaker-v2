@@ -36,6 +36,8 @@ namespace Gameplay.Power_ups
                 }
             }
             
+            LevelController.Instance.MultyBalls(_duration);
+            
             base.Collected(ball);
         }
     }

@@ -7,7 +7,7 @@ namespace Gameplay.Power_ups
     {
         protected override void Collected(GameObject ball)
         {
-            StartCoroutine(PaddleController.Instance.GunActivationCorutine(_duration));
+            PaddleController.Instance.GunActivation(_duration);
             
             base.Collected(ball);
         }

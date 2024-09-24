@@ -60,6 +60,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicBrick
       objectReference: {fileID: 0}
+    - target: {fileID: 4089232933002493767, guid: 716ff487cbe40684987ffe557122505c, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089232933002493767, guid: 716ff487cbe40684987ffe557122505c, type: 3}
+      propertyPath: m_SleepingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089232933002493767, guid: 716ff487cbe40684987ffe557122505c, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -86,3 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _brickLife: 0
+  _brickBreakReward: 10
+  <Type>k__BackingField: 1

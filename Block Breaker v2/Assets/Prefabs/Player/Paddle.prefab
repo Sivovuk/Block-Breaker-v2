@@ -34,6 +34,7 @@ Transform:
   m_Children:
   - {fileID: 1668326877937684711}
   - {fileID: 6116512361025982176}
+  - {fileID: 8958694086202011867}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &8244111332508811483
@@ -129,6 +130,9 @@ MonoBehaviour:
   _gun: {fileID: 5431562941263743316}
   _shootPoint: {fileID: 3423599613575464218}
   _bullet: {fileID: 8381798360935840350, guid: b347582b867cae74398255d475d1cf09, type: 3}
+  _ball: {fileID: 8669615098637786730, guid: bdeed63b6a92b954bba8b56de9f625d5, type: 3}
+  _ballSpawnPoint: {fileID: 8958694086202011867}
+  _levelController: {fileID: 0}
 --- !u!1 &3318337189003728008
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,6 +163,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6116512361025982176}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4924399614085333137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8958694086202011867}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8958694086202011867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4924399614085333137}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.21, y: 2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2030498951619709258}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5431562941263743316
 GameObject:

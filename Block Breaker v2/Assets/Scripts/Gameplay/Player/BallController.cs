@@ -13,7 +13,7 @@ namespace Gameplay.Player
     {
         [SerializeField] private float _pushForce = 5f;
         [SerializeField] private Vector3 _velocity;
-        
+
         private Vector3 _direction;
 
         private float _ballRadius;
@@ -27,19 +27,41 @@ namespace Gameplay.Player
         [SerializeField] private Collider2D _fireballCollider;
         [SerializeField] private Bomb _bomb;
 
-        void Start()
+        public static int _ballCounter;
+
+        private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
+        }
+
+        void Start()
+        {
             _direction = Random.insideUnitSphere.normalized; // Set a random initial direction
             _ballRadius = GetComponent<CircleCollider2D>().radius;
             _sprite = GetComponent<SpriteRenderer>();
+        }
+
+        private void OnEnable()
+        {
+            _ballCounter++;
+            //Debug.LogError("dodao " + _ballCounter);
+        }
+
+        private void OnDestroy()
+        {
+            _ballCounter--;
+            Debug.LogError("smanjio " + _ballCounter);
+            
+            if (_ballCounter < 1)
+                LevelController.Instance.LifeDecrese();
         }
 
         void Update()
         {
             if (PaddleController.Instance.BallLocked)
             {
-                transform.position = new Vector3(PaddleController.Instance.transform.position.x, PaddleController.Instance.transform.position.y+1.5f, 0);
+                transform.position = new Vector3(PaddleController.Instance.transform.position.x,
+                    PaddleController.Instance.transform.position.y + 1.5f, 0);
             }
         }
 
@@ -50,11 +72,11 @@ namespace Gameplay.Player
 
         public void ReleaseBall()
         {
-            List<Vector2> _directions = new List<Vector2>(); 
-            _directions.Add(new Vector2(0, 1));   // Up
-            _directions.Add(new Vector2(1, 1));   // Diagonal up right
-            _directions.Add(new Vector2(-1, -1));  // Diagonal up left
-            
+            List<Vector2> _directions = new List<Vector2>();
+            _directions.Add(new Vector2(0, 1)); // Up
+            _directions.Add(new Vector2(1, 1)); // Diagonal up right
+            _directions.Add(new Vector2(-1, -1)); // Diagonal up left
+
             _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
             _rigidbody2D.AddForce(_directions[Random.Range(0, _directions.Count)] * _pushForce, ForceMode2D.Force);
         }
@@ -70,8 +92,8 @@ namespace Gameplay.Player
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if(PaddleController.Instance.BallLocked) return;
-                
+            if (PaddleController.Instance.BallLocked) return;
+
             if (collision.gameObject.CompareTag("Paddle"))
             {
                 //AddVelocity();
@@ -84,9 +106,9 @@ namespace Gameplay.Player
                 {
                     IsBomb = false;
                     GameObject spawn = Instantiate(_bomb.gameObject, transform.position, Quaternion.identity);
-                    Destroy(spawn,1f);
+                    Destroy(spawn, 1f);
                 }
-                
+
             }
 
             AddVelocity();
@@ -97,16 +119,16 @@ namespace Gameplay.Player
             float x = 0;
             float y = 0;
 
-            if (Mathf.Abs(_rigidbody2D.velocity.x) < 20)
+            if (Mathf.Abs(_rigidbody2D.velocity.x) < 15)
                 x = 0.5f;
-            if (Mathf.Abs(_rigidbody2D.velocity.y) < 20)
+            if (Mathf.Abs(_rigidbody2D.velocity.y) < 15)
                 y = 0.5f;
 
             if (_rigidbody2D.velocity.x < 0)
                 x = -x;
             if (_rigidbody2D.velocity.y < 0)
                 y = -y;
-                
+
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x + x, _rigidbody2D.velocity.y + y);
         }
 

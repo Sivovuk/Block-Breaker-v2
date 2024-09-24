@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _brickLife: 1
+  _brickBreakReward: 10
+  <Type>k__BackingField: 4
   _pointB: {fileID: 1080207700498386227}
   _speed: 1
 --- !u!4 &8293727004564590937 stripped

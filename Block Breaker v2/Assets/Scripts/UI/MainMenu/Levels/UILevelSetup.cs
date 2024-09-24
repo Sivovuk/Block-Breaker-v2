@@ -25,7 +25,6 @@ public class UILevelSetup : MonoBehaviour
     private void LoadLevel()
     {
         GameManager.Instance.SetLevelIndex(_levelIndex);
-        Debug.Log(_levelIndex);
         SceneManager.LoadScene(GameManager.GAME_SCENE);
     }
 }

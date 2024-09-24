@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2108597755992934146, guid: 716ff487cbe40684987ffe557122505c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1455138325327698873, guid: 716ff487cbe40684987ffe557122505c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -55,5 +59,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1542823212004033137, guid: 716ff487cbe40684987ffe557122505c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4444259214535708032}
   m_SourcePrefab: {fileID: 100100000, guid: 716ff487cbe40684987ffe557122505c, type: 3}
+--- !u!1 &8233065919793825937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1542823212004033137, guid: 716ff487cbe40684987ffe557122505c, type: 3}
+  m_PrefabInstance: {fileID: 7433345512395623136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4444259214535708032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8233065919793825937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b3e7e561c34011b1db8936067271a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _brickLife: 1
+  _brickBreakReward: 10
+  <Type>k__BackingField: 5

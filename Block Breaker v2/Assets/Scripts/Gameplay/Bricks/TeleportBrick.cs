@@ -38,11 +38,9 @@ namespace Gameplay.Bricks
             float newHeight = height * 0.75f;
 
             float newMinScreenBoundsY = maxScreenBoundsY.y - newHeight;
-            Debug.Log(newMinScreenBoundsY +" : "+ maxScreenBoundsY.y);
             maxScreenBoundsX.x = maxScreenBoundsX.x - (transform.localScale.x/2);
             minScreenBoundsX.x = minScreenBoundsX.x + (transform.localScale.x/2);
             maxScreenBoundsY.y = maxScreenBoundsY.y - (transform.localScale.y/2);
-            Debug.Log(newMinScreenBoundsY +" : "+ maxScreenBoundsY.y);
 
             Vector3 newPosition = new Vector3(
                 Random.Range(minScreenBoundsX.x, maxScreenBoundsX.x), 

@@ -53,12 +53,40 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3415008948789081778, guid: 30b9e48730825f045908abfce15ca012, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 1982bfef767c71e4b9c43980c4b456ba, type: 3}
+    - target: {fileID: 3415008948789081778, guid: 30b9e48730825f045908abfce15ca012, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3415008948789081778, guid: 30b9e48730825f045908abfce15ca012, type: 3}
       propertyPath: m_Color.r
-      value: 0.18090904
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108435005051801354, guid: 30b9e48730825f045908abfce15ca012, type: 3}
+      propertyPath: m_Name
+      value: Icon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760614972980480933, guid: 30b9e48730825f045908abfce15ca012, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760614972980480933, guid: 30b9e48730825f045908abfce15ca012, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760614972980480933, guid: 30b9e48730825f045908abfce15ca012, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760614972980480933, guid: 30b9e48730825f045908abfce15ca012, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.127
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760614972980480933, guid: 30b9e48730825f045908abfce15ca012, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -87,4 +115,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fallSpeed: 10
   _duration: 5
-  _type: 1
+  _rewardValue: 10
+  _type: 2

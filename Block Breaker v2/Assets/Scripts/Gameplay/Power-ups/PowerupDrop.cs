@@ -1,14 +1,15 @@
 ﻿using System;
 using Gameplay.Player;
+using UI.HUD;
 using UnityEngine;
 
 public enum CollectableType
 {
-    Multiply,
-    PaddleExtend,
-    Fireball,
-    Bomb,
-    Gun
+    Multiply = 1,
+    PaddleExtend = 2,
+    Fireball = 3,
+    Bomb = 4,
+    Gun = 5
 }
 
 namespace Gameplay.Power_ups
@@ -17,6 +18,7 @@ namespace Gameplay.Power_ups
     {
         [SerializeField] protected float _fallSpeed = 10f;
         [SerializeField] protected float _duration;
+        [SerializeField] protected int _rewardValue = 10;
         [SerializeField] protected CollectableType _type;
 
         protected Camera _mainCamera;
@@ -40,15 +42,17 @@ namespace Gameplay.Power_ups
         {
             if (collider2D.CompareTag("Paddle") && collider2D.TryGetComponent<PaddleController>(out PaddleController ball))
             {
-                PaddleController.Instance.Collect(_type, _duration);
+                PaddleController.Instance.Collect(_type, _duration, _rewardValue);
                 Collected(PaddleController.Instance.BallController.gameObject);
             }
         }
 
         protected virtual void Collected(GameObject ball)
         {
-            Debug.Log("Collected");
-            
+            if (_type != CollectableType.Bomb)
+            {
+                PowerupsTimerDisplay.Instance.AddPowerTimer((int)_type, _duration, _type);
+            }
             Destroy(gameObject);
         }
     }

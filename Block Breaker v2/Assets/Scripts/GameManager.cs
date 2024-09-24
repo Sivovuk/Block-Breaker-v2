@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
     
     public static GameManager Instance { get; private set; }
 
-    public int LevelIndex { get; private set; }
-    public GameData GameData;
+    [field:SerializeField]public int LevelIndex { get; private set; }
+    [SerializeField] public GameData GameData;
 
     private void Awake()
     {
@@ -46,15 +46,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetLevelIndex(int index)
+    public bool SetLevelIndex(int index)
     {
-        if (index > 0)
+        if (index >= 0 && index <= GameData.boards.Count)
         {
             LevelIndex = index;
+            return true;
         }
         else
         {
-            Debug.LogError("Bad level index, less then 0");
+            Debug.LogError("No more levels");
+            return false;
         }
     }
 }
