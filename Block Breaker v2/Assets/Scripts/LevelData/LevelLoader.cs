@@ -52,7 +52,6 @@ namespace Level
                 {
                     if (row.row[colIndex] > 0)
                     {
-                        //Debug.Log(colIndex);
                         GameObject brick = Instantiate(_bricksVariante[row.row[colIndex]-1], transform);
                         brick.GetComponent<BasicBrick>().Setup(_levelController);
                         brick.transform.position = new Vector2(x,y);

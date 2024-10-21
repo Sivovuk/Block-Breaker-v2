@@ -109,7 +109,6 @@ public class LevelController : MonoBehaviour
         _lifes--;
         OnLifeChange.Invoke(_lifes);
 
-        Debug.LogError("LifeDecrese : " + _lifes);
         if (_lifes <= 0)
             GameLost();
 
@@ -218,8 +217,6 @@ public class LevelController : MonoBehaviour
                 PaddleController.Instance.SetBallController(ball.GetComponent<BallController>());
                 break;
             }
-            
-            
         }
     }
 }

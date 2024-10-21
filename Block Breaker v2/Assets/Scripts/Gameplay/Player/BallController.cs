@@ -36,7 +36,7 @@ namespace Gameplay.Player
 
         void Start()
         {
-            _direction = Random.insideUnitSphere.normalized; // Set a random initial direction
+            _direction = Random.insideUnitSphere.normalized;
             _ballRadius = GetComponent<CircleCollider2D>().radius;
             _sprite = GetComponent<SpriteRenderer>();
         }
@@ -44,13 +44,11 @@ namespace Gameplay.Player
         private void OnEnable()
         {
             _ballCounter++;
-            //Debug.LogError("dodao " + _ballCounter);
         }
 
         private void OnDestroy()
         {
             _ballCounter--;
-            Debug.LogError("smanjio " + _ballCounter);
             
             if (_ballCounter < 1)
                 LevelController.Instance.LifeDecrese();
